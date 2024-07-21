@@ -10,7 +10,7 @@ This repo contains the code we used to train the models. But it could be really 
 
 # How to train/infer
 
-We have 5 people in our team and each one has his own environments and training details.
+We have 5 people in our team and each one has his own environment and training/inference details.
 
 ## Common part
 
@@ -58,6 +58,7 @@ sh run.sh
 ```
 
 - **STEP3: copy submission for ensemble**
+
 move submission files to `submission/subs` folder for final ensemble
 ```
 cd adam_part/src
@@ -84,6 +85,7 @@ sh run_only_infer.sh
 ```
 
 - **STEP3: copy submission for ensemble**
+
 move submission files to `submission/subs` folder for final ensemble
 ```
 cd adam_part/src
@@ -97,4 +99,6 @@ sh cp_infer.sh
 ## xxxx's part
 
 ## Ensemble part
+
+we use [hill climb](https://www.kaggle.com/competitions/playground-series-s3e3/discussion/379690) to search blend weights.
 
