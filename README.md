@@ -8,7 +8,7 @@ This repo contains the code we used to train the models. But it could be really 
 
 
 
-# How to train
+# How to train/infer
 
 We have 5 people in our team and each one has his own environments and training details.
 
