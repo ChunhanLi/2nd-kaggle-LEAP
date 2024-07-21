@@ -94,8 +94,17 @@ sh cp_infer.sh
 
 ## xxxx's part
 
-## xxxx's part
+## Max2020's part
+In my section, I focused exclusively on the fine-tuning of the LSTM model. Model 10 follows the approach designed by [@zui0711](https://www.kaggle.com/zui0711). The architecture of Model 10 consists of two connected LSTM layers with different hidden sizes, followed by a MultiheadAttention layer. Models 14, 15, 21, and 22 are all improvements based on the model by [@forcewithme](https://www.kaggle.com/forcewithme), integrating LSTM with skip connections. Model 22 is our team’s highest-performing single model, providing us with the best results in local scoring, Leader Board scoring, and private scoring.
 
+Regarding the learning rate schedule, I used a cosine decay learning rate, with decays occurring at three and six epochs.
+
+For the loss function, I utilized smooth L1 loss with a beta of 0.5.
+
+## Group Finetune
+In deep learning, a continuously discussed topic within multi-objective learning tasks is the interaction between different learning objectives, specifically whether they promote or inhibit each other. In our experiments on the leap dataset, we found that in the early stages of training, seven different target groups promoted each other. However, towards the end of the training, these learning objectives began to interfere with each other, potentially due to complex semantic constraints. 
+
+Inspired by the [top solution from the 2021 VPP competition](https://www.kaggle.com/competitions/ventilator-pressure-prediction/discussion/285320), we divided 368 features into seven groups, six of which are series of measurements of different metrics along the atmospheric column, and one group consists of eight unique single targets. After the training process with 364 full outputs was completed, we fine-tuned these groups again. This allowed each model with different architectures to achieve an improvement ranging from 0.0005 to 0.0015. Due to time and resource constraints, we only fine-tuned each group for one epoch.
 ## Ensemble part
 
 Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-series-s3e3/discussion/379690) to search blend weights.
