@@ -18,7 +18,7 @@ We have 5 people in our team and each one has his own environments and training 
     - test.csv
     - sample_submission.csv
     - sample_submission_old.csv
-- [**if you plan to train from scratch, this step is needed.**] download https://huggingface.co/datasets/LEAP/ClimSim_low-res data into `raw_data/ClimSim_low-res` folder. The expected structure should be raw_data/ClimSim_low-res/train/0009-01/*.nc
+- [**if you plan to only infer, this step can be skipped.**] download https://huggingface.co/datasets/LEAP/ClimSim_low-res data into `raw_data/ClimSim_low-res` folder. The expected structure should be raw_data/ClimSim_low-res/train/0009-01/*.nc
 
 ## ADAM's part
 
