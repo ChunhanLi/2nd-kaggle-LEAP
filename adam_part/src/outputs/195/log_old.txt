@@ -1,0 +1,124 @@
+06/23/2024 01:10:08 - INFO - 195.py[line:72] - utils.base_utils - exp id:195
+06/23/2024 01:10:08 - INFO - 195.py[line:73] - utils.base_utils - config:{'exp_id': '195', 'seed': 47, 'log_path': '../outputs/195/log.txt', 'save_path': '../outputs/195', 'device': 'cuda:0', 'print_freq': 1000, 'save_best_model': True, 'epoch': 25, 'gradient_checkpointing_enable': False, 'gradient_accumulation_steps': 1, 'max_grad_norm': 1000, 'evaluate_n_times_per_epoch': 4, 'early_stop_flag': True, 'early_stop_step': 0, 'batch_size': 2048, 'val_batch_size': 4096, 'eval_val': True, 'num_workers': 24, 'apex': False, 'debug': False, 'scheduler_type': 'linear_schedule_with_warmup', 'n_warmup_steps': 0, 'cosine_n_cycles': 1, 'learning_rate': 0.001}
+06/23/2024 01:11:39 - INFO - 195.py[line:605] - utils.base_utils - train inputs:(48612081, 556)
+06/23/2024 01:11:39 - INFO - 195.py[line:606] - utils.base_utils - train outputs:(48612081, 368)
+06/23/2024 01:11:39 - INFO - 195.py[line:607] - utils.base_utils - valid inputs:(849408, 556)
+06/23/2024 01:11:39 - INFO - 195.py[line:608] - utils.base_utils - valid outputs:(849408, 368)
+06/23/2024 01:11:40 - INFO - 195.py[line:613] - utils.base_utils - valid done
+06/23/2024 01:11:40 - INFO - 195.py[line:617] - utils.base_utils - train done
+06/23/2024 01:11:40 - INFO - 195.py[line:634] - utils.base_utils - Using 2 GPUs
+06/23/2024 01:23:49 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [0][5934/23736], train_avg_loss:0.1918, grad norm2:0.30, time:722.24, Lr:0.00100000
+06/23/2024 01:25:46 - INFO - 195.py[line:531] - utils.base_utils - epoch:0,  val_avg_loss:0.0737,  val_oof_score:-0.7208,  time:116.30
+06/23/2024 01:25:47 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 01:36:10 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [0][11868/23736], train_avg_loss:0.1728, grad norm2:0.26, time:1463.12, Lr:0.00100000
+06/23/2024 01:38:51 - INFO - 195.py[line:531] - utils.base_utils - epoch:0,  val_avg_loss:0.0705,  val_oof_score:-0.7368,  time:160.80
+06/23/2024 01:38:52 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 01:49:15 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [0][17802/23736], train_avg_loss:0.1647, grad norm2:0.32, time:2248.80, Lr:0.00100000
+06/23/2024 01:52:06 - INFO - 195.py[line:531] - utils.base_utils - epoch:0,  val_avg_loss:0.0683,  val_oof_score:-0.7475,  time:168.03
+06/23/2024 01:52:07 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 02:02:30 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [0][23736/23736], train_avg_loss:0.1601, grad norm2:0.21, time:3043.42, Lr:0.00100000
+06/23/2024 02:05:09 - INFO - 195.py[line:531] - utils.base_utils - epoch:0,  val_avg_loss:0.0672,  val_oof_score:-0.7582,  time:159.04
+06/23/2024 02:05:10 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 02:17:59 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [1][5934/23736], train_avg_loss:0.1442, grad norm2:0.24, time:761.24, Lr:0.00100000
+06/23/2024 02:20:34 - INFO - 195.py[line:531] - utils.base_utils - epoch:1,  val_avg_loss:0.0666,  val_oof_score:-0.7596,  time:153.81
+06/23/2024 02:20:34 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 02:30:59 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [1][11868/23736], train_avg_loss:0.1437, grad norm2:0.17, time:1541.09, Lr:0.00100000
+06/23/2024 02:33:35 - INFO - 195.py[line:531] - utils.base_utils - epoch:1,  val_avg_loss:0.0661,  val_oof_score:-0.7613,  time:155.31
+06/23/2024 02:33:36 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 02:43:59 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [1][17802/23736], train_avg_loss:0.1432, grad norm2:0.22, time:2321.09, Lr:0.00100000
+06/23/2024 02:46:32 - INFO - 195.py[line:531] - utils.base_utils - epoch:1,  val_avg_loss:0.0656,  val_oof_score:-0.7664,  time:151.91
+06/23/2024 02:46:32 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 02:56:56 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [1][23736/23736], train_avg_loss:0.1428, grad norm2:0.16, time:3098.43, Lr:0.00100000
+06/23/2024 02:59:31 - INFO - 195.py[line:531] - utils.base_utils - epoch:1,  val_avg_loss:0.0653,  val_oof_score:-0.7688,  time:155.04
+06/23/2024 02:59:32 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 03:11:59 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [2][5934/23736], train_avg_loss:0.1407, grad norm2:0.21, time:739.89, Lr:0.00100000
+06/23/2024 03:14:33 - INFO - 195.py[line:531] - utils.base_utils - epoch:2,  val_avg_loss:0.0652,  val_oof_score:-0.7697,  time:152.61
+06/23/2024 03:14:34 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 03:24:55 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [2][11868/23736], train_avg_loss:0.1405, grad norm2:0.17, time:1515.91, Lr:0.00100000
+06/23/2024 03:27:42 - INFO - 195.py[line:531] - utils.base_utils - epoch:2,  val_avg_loss:0.0649,  val_oof_score:-0.7703,  time:165.79
+06/23/2024 03:27:43 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 03:38:02 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [2][17802/23736], train_avg_loss:0.1403, grad norm2:0.12, time:2303.07, Lr:0.00100000
+06/23/2024 03:40:21 - INFO - 195.py[line:531] - utils.base_utils - epoch:2,  val_avg_loss:0.0647,  val_oof_score:-0.7699,  time:136.00
+06/23/2024 03:50:43 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [2][23736/23736], train_avg_loss:0.1402, grad norm2:0.19, time:3063.73, Lr:0.00100000
+06/23/2024 03:52:50 - INFO - 195.py[line:531] - utils.base_utils - epoch:2,  val_avg_loss:0.0645,  val_oof_score:-0.7713,  time:126.78
+06/23/2024 03:52:51 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 04:04:54 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [3][5934/23736], train_avg_loss:0.1390, grad norm2:0.15, time:715.77, Lr:0.00100000
+06/23/2024 04:07:03 - INFO - 195.py[line:531] - utils.base_utils - epoch:3,  val_avg_loss:0.0645,  val_oof_score:-0.7734,  time:128.02
+06/23/2024 04:07:04 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 04:17:28 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [3][11868/23736], train_avg_loss:0.1389, grad norm2:0.15, time:1469.20, Lr:0.00100000
+06/23/2024 04:19:37 - INFO - 195.py[line:531] - utils.base_utils - epoch:3,  val_avg_loss:0.0643,  val_oof_score:-0.7734,  time:128.63
+06/23/2024 04:19:39 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 04:29:59 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [3][17802/23736], train_avg_loss:0.1389, grad norm2:0.21, time:2220.64, Lr:0.00100000
+06/23/2024 04:32:13 - INFO - 195.py[line:531] - utils.base_utils - epoch:3,  val_avg_loss:0.0641,  val_oof_score:-0.7741,  time:132.61
+06/23/2024 04:32:14 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 04:42:38 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [3][23736/23736], train_avg_loss:0.1388, grad norm2:0.14, time:2979.53, Lr:0.00100000
+06/23/2024 04:44:51 - INFO - 195.py[line:531] - utils.base_utils - epoch:3,  val_avg_loss:0.0641,  val_oof_score:-0.7757,  time:133.33
+06/23/2024 04:44:52 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 04:56:54 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [4][5934/23736], train_avg_loss:0.1379, grad norm2:0.24, time:713.78, Lr:0.00100000
+06/23/2024 04:59:01 - INFO - 195.py[line:531] - utils.base_utils - epoch:4,  val_avg_loss:0.0639,  val_oof_score:-0.7755,  time:126.26
+06/23/2024 05:09:21 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [4][11868/23736], train_avg_loss:0.1379, grad norm2:0.13, time:1461.39, Lr:0.00100000
+06/23/2024 05:11:31 - INFO - 195.py[line:531] - utils.base_utils - epoch:4,  val_avg_loss:0.0639,  val_oof_score:-0.7742,  time:128.56
+06/23/2024 05:21:53 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [4][17802/23736], train_avg_loss:0.1379, grad norm2:0.14, time:2213.17, Lr:0.00100000
+06/23/2024 05:24:12 - INFO - 195.py[line:531] - utils.base_utils - epoch:4,  val_avg_loss:0.0638,  val_oof_score:-0.7758,  time:138.22
+06/23/2024 05:24:14 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 05:34:36 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [4][23736/23736], train_avg_loss:0.1378, grad norm2:0.16, time:2976.19, Lr:0.00100000
+06/23/2024 05:36:52 - INFO - 195.py[line:531] - utils.base_utils - epoch:4,  val_avg_loss:0.0640,  val_oof_score:-0.7738,  time:136.13
+06/23/2024 05:48:59 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [5][5934/23736], train_avg_loss:0.1374, grad norm2:0.13, time:719.10, Lr:0.00100000
+06/23/2024 05:51:09 - INFO - 195.py[line:531] - utils.base_utils - epoch:5,  val_avg_loss:0.0637,  val_oof_score:-0.7747,  time:128.54
+06/23/2024 06:01:30 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [5][11868/23736], train_avg_loss:0.1372, grad norm2:0.14, time:1470.45, Lr:0.00100000
+06/23/2024 06:03:41 - INFO - 195.py[line:531] - utils.base_utils - epoch:5,  val_avg_loss:0.0635,  val_oof_score:-0.7780,  time:129.56
+06/23/2024 06:03:42 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 06:14:03 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [5][17802/23736], train_avg_loss:0.1372, grad norm2:0.16, time:2223.63, Lr:0.00100000
+06/23/2024 06:16:12 - INFO - 195.py[line:531] - utils.base_utils - epoch:5,  val_avg_loss:0.0636,  val_oof_score:-0.7758,  time:127.98
+06/23/2024 06:26:35 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [5][23736/23736], train_avg_loss:0.1372, grad norm2:0.10, time:2975.43, Lr:0.00100000
+06/23/2024 06:28:44 - INFO - 195.py[line:531] - utils.base_utils - epoch:5,  val_avg_loss:0.0636,  val_oof_score:-0.7765,  time:128.37
+06/23/2024 06:40:48 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [6][5934/23736], train_avg_loss:0.1366, grad norm2:0.19, time:716.26, Lr:0.00100000
+06/23/2024 06:42:58 - INFO - 195.py[line:531] - utils.base_utils - epoch:6,  val_avg_loss:0.0635,  val_oof_score:-0.7777,  time:128.90
+06/23/2024 06:53:21 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [6][11868/23736], train_avg_loss:0.1355, grad norm2:0.12, time:1469.44, Lr:0.00010000
+06/23/2024 06:55:31 - INFO - 195.py[line:531] - utils.base_utils - epoch:6,  val_avg_loss:0.0623,  val_oof_score:-0.7835,  time:129.10
+06/23/2024 06:55:32 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 07:05:52 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [6][17802/23736], train_avg_loss:0.1350, grad norm2:0.09, time:2220.80, Lr:0.00010000
+06/23/2024 07:08:03 - INFO - 195.py[line:531] - utils.base_utils - epoch:6,  val_avg_loss:0.0622,  val_oof_score:-0.7843,  time:129.87
+06/23/2024 07:08:04 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 07:18:25 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [6][23736/23736], train_avg_loss:0.1347, grad norm2:0.16, time:2973.46, Lr:0.00010000
+06/23/2024 07:20:34 - INFO - 195.py[line:531] - utils.base_utils - epoch:6,  val_avg_loss:0.0621,  val_oof_score:-0.7849,  time:128.73
+06/23/2024 07:20:34 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 07:32:35 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [7][5934/23736], train_avg_loss:0.1336, grad norm2:0.11, time:713.44, Lr:0.00010000
+06/23/2024 07:34:43 - INFO - 195.py[line:531] - utils.base_utils - epoch:7,  val_avg_loss:0.0621,  val_oof_score:-0.7846,  time:126.65
+06/23/2024 07:45:06 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [7][11868/23736], train_avg_loss:0.1335, grad norm2:0.16, time:1464.03, Lr:0.00010000
+06/23/2024 07:47:16 - INFO - 195.py[line:531] - utils.base_utils - epoch:7,  val_avg_loss:0.0621,  val_oof_score:-0.7848,  time:128.90
+06/23/2024 07:57:36 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [7][17802/23736], train_avg_loss:0.1335, grad norm2:0.15, time:2214.57, Lr:0.00010000
+06/23/2024 07:59:48 - INFO - 195.py[line:531] - utils.base_utils - epoch:7,  val_avg_loss:0.0621,  val_oof_score:-0.7850,  time:130.84
+06/23/2024 07:59:49 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 08:10:06 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [7][23736/23736], train_avg_loss:0.1335, grad norm2:0.11, time:2964.40, Lr:0.00010000
+06/23/2024 08:12:15 - INFO - 195.py[line:531] - utils.base_utils - epoch:7,  val_avg_loss:0.0620,  val_oof_score:-0.7851,  time:128.30
+06/23/2024 08:12:15 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 08:24:20 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [8][5934/23736], train_avg_loss:0.1333, grad norm2:0.10, time:717.78, Lr:0.00010000
+06/23/2024 08:26:29 - INFO - 195.py[line:531] - utils.base_utils - epoch:8,  val_avg_loss:0.0621,  val_oof_score:-0.7844,  time:127.44
+06/23/2024 08:36:51 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [8][11868/23736], train_avg_loss:0.1333, grad norm2:0.12, time:1468.26, Lr:0.00010000
+06/23/2024 08:39:00 - INFO - 195.py[line:531] - utils.base_utils - epoch:8,  val_avg_loss:0.0621,  val_oof_score:-0.7848,  time:128.45
+06/23/2024 08:49:21 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [8][17802/23736], train_avg_loss:0.1333, grad norm2:0.16, time:2219.14, Lr:0.00010000
+06/23/2024 08:51:31 - INFO - 195.py[line:531] - utils.base_utils - epoch:8,  val_avg_loss:0.0621,  val_oof_score:-0.7851,  time:128.52
+06/23/2024 09:01:53 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [8][23736/23736], train_avg_loss:0.1333, grad norm2:0.13, time:2970.79, Lr:0.00010000
+06/23/2024 09:04:00 - INFO - 195.py[line:531] - utils.base_utils - epoch:8,  val_avg_loss:0.0620,  val_oof_score:-0.7856,  time:127.00
+06/23/2024 09:04:01 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 09:16:05 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [9][5934/23736], train_avg_loss:0.1332, grad norm2:0.11, time:717.81, Lr:0.00010000
+06/23/2024 09:18:13 - INFO - 195.py[line:531] - utils.base_utils - epoch:9,  val_avg_loss:0.0620,  val_oof_score:-0.7853,  time:126.93
+06/23/2024 09:28:34 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [9][11868/23736], train_avg_loss:0.1331, grad norm2:0.21, time:1467.02, Lr:0.00010000
+06/23/2024 09:30:48 - INFO - 195.py[line:531] - utils.base_utils - epoch:9,  val_avg_loss:0.0620,  val_oof_score:-0.7849,  time:132.80
+06/23/2024 09:41:13 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [9][17802/23736], train_avg_loss:0.1331, grad norm2:0.12, time:2226.04, Lr:0.00010000
+06/23/2024 09:43:27 - INFO - 195.py[line:531] - utils.base_utils - epoch:9,  val_avg_loss:0.0620,  val_oof_score:-0.7850,  time:132.31
+06/23/2024 09:53:53 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [9][23736/23736], train_avg_loss:0.1331, grad norm2:0.09, time:2985.47, Lr:0.00001000
+06/23/2024 09:56:02 - INFO - 195.py[line:531] - utils.base_utils - epoch:9,  val_avg_loss:0.0619,  val_oof_score:-0.7857,  time:129.06
+06/23/2024 09:56:03 - INFO - 195.py[line:387] - utils.base_utils - saving model...,[]
+06/23/2024 10:08:09 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [10][5934/23736], train_avg_loss:0.1327, grad norm2:0.09, time:718.99, Lr:0.00001000
+06/23/2024 10:10:19 - INFO - 195.py[line:531] - utils.base_utils - epoch:10,  val_avg_loss:0.0619,  val_oof_score:-0.7856,  time:128.77
+06/23/2024 10:20:43 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [10][11868/23736], train_avg_loss:0.1327, grad norm2:0.12, time:1473.14, Lr:0.00001000
+06/23/2024 10:22:53 - INFO - 195.py[line:531] - utils.base_utils - epoch:10,  val_avg_loss:0.0619,  val_oof_score:-0.7857,  time:128.65
+06/23/2024 10:33:17 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [10][17802/23736], train_avg_loss:0.1327, grad norm2:0.14, time:2227.63, Lr:0.00001000
+06/23/2024 10:35:29 - INFO - 195.py[line:531] - utils.base_utils - epoch:10,  val_avg_loss:0.0619,  val_oof_score:-0.7857,  time:130.97
+06/23/2024 10:45:55 - INFO - 195.py[line:358] - utils.base_utils - Epoch: [10][23736/23736], train_avg_loss:0.1327, grad norm2:0.07, time:2985.34, Lr:0.00001000
+06/23/2024 10:48:06 - INFO - 195.py[line:531] - utils.base_utils - epoch:10,  val_avg_loss:0.0619,  val_oof_score:-0.7857,  time:130.48
+06/23/2024 10:48:13 - INFO - 195.py[line:403] - utils.base_utils - early stop---loss:-0.7857, epoch:9
+06/23/2024 10:48:13 - INFO - 195.py[line:647] - utils.base_utils - best_zero_list:[]
+06/23/2024 10:48:14 - INFO - 195.py[line:655] - utils.base_utils - r2 score:-0.785695

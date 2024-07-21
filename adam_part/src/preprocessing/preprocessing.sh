@@ -1,0 +1,9 @@
+set -e
+python make_folders.py
+python rawdata2npy_train.py
+python rawdata2npy_valid.py
+python generate_dataset_v3_inputs.py
+python generate_dataset_v3_outputs.py
+python generate_dataset_v4_inputs.py
+python generate_dataset_v4_outputs.py
+python process_test.py
