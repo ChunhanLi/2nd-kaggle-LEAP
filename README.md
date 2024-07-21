@@ -1,5 +1,3 @@
-[toc]
-
 # LEAP - Atmospheric Physics using AI (ClimSim) - 2nd Place Solution
 
 It's 2nd place solution to Kaggle competition: https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim
@@ -38,7 +36,7 @@ We have 5 people in our team and each one has his own environment and training/i
 ### Train from scratch
 - **STEP1: preprocessing**
 
-Download file `v3_index.pt` into `adam_part/data/middle_result` folder
+From [link](https://www.kaggle.com/datasets/hookman/leap-2nd-prize-models), Download file `v3_index.pt` into `adam_part/data/middle_result` folder
 - I used sampling in creating datasets. `v3_index.pt` is the sampling index which will be used when creating dataset.
 ```
 cd adam_part/src
@@ -70,7 +68,7 @@ sh cp_train.sh
 In this part, it will only do the inference using model file we uploaded. 
 - **STEP1: preprocessing**
 
-1. Download model file `195.pt`, `197.pt`, `200.pt` into `adam_part/src/infer/saved_model` folder
+1. Download model file `195.pt`, `197.pt`, `200.pt` from [link](https://www.kaggle.com/datasets/hookman/leap-2nd-prize-models) into `adam_part/src/infer/saved_model` folder
 2. 
 ```
 cd adam_part/src/preprocessing
@@ -100,5 +98,13 @@ sh cp_infer.sh
 
 ## Ensemble part
 
-we use [hill climb](https://www.kaggle.com/competitions/playground-series-s3e3/discussion/379690) to search blend weights.
+Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-series-s3e3/discussion/379690) to search blend weights.
 
+`submission/blend/weight_df_dict_all_group_all_v10.pt` saves weights of each model.
+
+```
+cd submission/blend
+python hill_climb_blend.py
+```
+
+This will generate `submission/blend/final_blend_v10.parquet` for final submission.
