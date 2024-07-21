@@ -41,7 +41,7 @@ config = {
     "print_freq": 1000,
     "save_best_model": True,
     # ======================== train & val ==========================
-    "epoch": 1,
+    "epoch": 25,
     "gradient_checkpointing_enable": False,
     "gradient_accumulation_steps": 1,
     "max_grad_norm": 1000,
