@@ -38,7 +38,7 @@ We have 5 people in our team and each one has his own environments and training 
 ### Train from scratch
 - **STEP1: preprocessing**
 
-Download model file `v3_index.pt` into `adam_part/data/middle_result` folder
+Download file `v3_index.pt` into `adam_part/data/middle_result` folder
 - I used sampling in creating datasets. `v3_index.pt` is the sampling index which will be used when creating dataset.
 ```
 cd adam_part/src
