@@ -57,6 +57,13 @@ cd adam_part/src/exp
 sh run.sh
 ```
 
+- **STEP3: copy submission for ensemble**
+move submission files to `submission/subs` folder for final ensemble
+```
+cd adam_part/src
+sh cp_train.sh
+```
+
 ### Only inference
 
 In this part, it will only do the inference using model file we uploaded. 
@@ -76,8 +83,18 @@ cd adam_part/src/infer
 sh run_only_infer.sh
 ```
 
-## xxxx's part
+- **STEP3: copy submission for ensemble**
+move submission files to `submission/subs` folder for final ensemble
+```
+cd adam_part/src
+sh cp_infer.sh
+```
 
 ## xxxx's part
 
 ## xxxx's part
+
+## xxxx's part
+
+## Ensemble part
+
