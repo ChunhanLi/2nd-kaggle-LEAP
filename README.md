@@ -92,7 +92,7 @@ sh cp_infer.sh
 
 ## xxxx's part
 
-## xxxx's part
+## Joseph's part(coming soon)
 
 ## Max2020's part
 ### Train from scratch
