@@ -95,6 +95,17 @@ sh cp_infer.sh
 ## xxxx's part
 
 ## Max2020's part
+### Train from scratch
+```shell
+cd fdzm_part/exp
+sh train_max2020.sh 
+```
+### Only inference
+```shell
+cd fdzm_part/infer
+sh infer_max2020.sh
+```
+
 In my section, I focused exclusively on the fine-tuning of the LSTM model. Model 10 follows the approach designed by [@zui0711](https://www.kaggle.com/zui0711). The architecture of Model 10 consists of two connected LSTM layers with different hidden sizes, followed by a MultiheadAttention layer. Models 14, 15, 21, and 22 are all improvements based on the model by [@forcewithme](https://www.kaggle.com/forcewithme), integrating LSTM with skip connections. Model 22 is our team’s highest-performing single model, providing us with the best results in local scoring, Leader Board scoring, and private scoring.
 
 <div align=center><img src="https://github.com/user-attachments/assets/721c1783-69a1-4d93-9184-c3a52c69211c" alt="jpg name" width="50%"/></div>
@@ -104,7 +115,6 @@ Regarding the learning rate schedule, I used a cosine decay learning rate, with 
 <div align=center><img src="https://github.com/user-attachments/assets/f21a9ffd-00e5-4a14-9337-d8937e5bf017" alt="jpg name" width="80%"/></div>
 
 For the loss function, I utilized smooth L1 loss with a beta of 0.5.
-
 
 ## Group Finetune
 In deep learning, a continuously discussed topic within multi-objective learning tasks is the interaction between different learning objectives, specifically whether they promote or inhibit each other. In our experiments on the leap dataset, we found that in the early stages of training, seven different target groups promoted each other. However, towards the end of the training, these learning objectives began to interfere with each other, potentially due to complex semantic constraints. 
