@@ -1,0 +1,3 @@
+python Joseph_exp907_training.py
+python Joseph_exp912_training.py
+python Joseph_exp912sep_training.py
