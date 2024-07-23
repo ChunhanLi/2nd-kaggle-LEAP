@@ -140,7 +140,7 @@ In deep learning, a continuously discussed topic within multi-objective learning
 
 Inspired by the [top solution from the 2021 VPP competition](https://www.kaggle.com/competitions/ventilator-pressure-prediction/discussion/285320), we divided 368 features into seven groups, six of which are series of measurements of different metrics along the atmospheric column, and one group consists of eight unique single targets. After the training process with 364 full outputs was completed, we fine-tuned these groups again. This allowed each model with different architectures to achieve an improvement ranging from 0.0005 to 0.0015. Due to time and resource constraints, we only fine-tuned each group for one epoch.
 
-### zuiye's part
+### ZuiYe's part
 According to the final hill climb result, my models are not taken into use in the final ensemble submission, so I just simply describe my method without codes.
 
 My models are mainly based one two architectures. The first one consists of 2 LSTM layers followed by a MultiheadAttention layer. The other one consists of 3 parallel Convolutional layers with 3 different kernal sizes and next 2 LSTM layers followed by a MultiheadAttention layer just like the first architecture. My best single model gets LB 0.78696 / PB 0.78205 and ensemle of my own models (with hill climb) gets LB 0.79050/ PB 0.78614.
