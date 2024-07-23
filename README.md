@@ -150,7 +150,7 @@ Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-seri
 
 **Weights of best model are following:**
 
-|exp_id|weight|cv|public leadborad|private leadboard|
+|exp_id|weight|cv|public leaderborad|private leaderboard|
 |:-:|:-:|:-:|:-:|:-:|
 |forcewithme_exp32|0.166556|0.790|0.7865|0.78398|
 |forcewithme_exp37|0.158625|0.7896|0.78618|0.78293|
@@ -179,5 +179,7 @@ python hill_climb_blend.py
 
 This will generate `submission/blend/final_blend_v10.parquet` for final submission.
 
-
+- cv:0.7955 
+- public leaderborad: 0.79211
+- private leaderboard: 0.78856
 
