@@ -148,7 +148,7 @@ Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-seri
 
 `submission/blend/weight_df_dict_all_group_all_v10.pt` saves ensemble weight of each model.
 
-**Weights of best Model are following:**
+**Weights of best model are following:**
 
 |exp_id|weight|cv|public leadborad|private leadboard|
 |:-:|:-:|:-:|:-:|:-:|
