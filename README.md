@@ -92,10 +92,14 @@ sh cp_infer.sh
 
 ## xxxx's part
 
+
 ## Joseph's part(coming soon)
 
 ## Max2020's part
+My environment requirements need to be consistent with those of Joseph and Forcewithme.
+
 ### Train from scratch
+
 ```shell
 cd fdzm_part/exp
 sh train_max2020.sh 
