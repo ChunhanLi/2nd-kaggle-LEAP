@@ -146,14 +146,7 @@ Inspired by the [top solution from the 2021 VPP competition](https://www.kaggle.
 
 Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-series-s3e3/discussion/379690) to search blend weights.
 
-`submission/blend/weight_df_dict_all_group_all_v10.pt` saves weights of each model.
-
-```
-cd submission/blend
-python hill_climb_blend.py
-```
-
-This will generate `submission/blend/final_blend_v10.parquet` for final submission.
+`submission/blend/weight_df_dict_all_group_all_v10.pt` saves ensemble weight of each model.
 
 **Weights of best Model are following:**
 
@@ -175,4 +168,13 @@ This will generate `submission/blend/final_blend_v10.parquet` for final submissi
 |adam_exp195|-0.049875|0.78569|0.78334|0.77753|
 |Jo_exp907|-0.083779|0.7855|0.78289|0.77873|
 |forcewithme_exp18|-0.089079|0.7890|0.7863|0.78272
+
+```
+cd submission/blend
+python hill_climb_blend.py
+```
+
+This will generate `submission/blend/final_blend_v10.parquet` for final submission.
+
+
 
