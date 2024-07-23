@@ -169,6 +169,9 @@ Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-seri
 |Jo_exp907|-0.083779|0.7855|0.78289|0.77873|
 |forcewithme_exp18|-0.089079|0.7890|0.7863|0.78272
 
+
+**Code**
+
 ```
 cd submission/blend
 python hill_climb_blend.py
