@@ -20,6 +20,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 sys.path.insert(0, "../")
+sys.path.insert(0, "./")
 import os
 import gc
 from sklearn.metrics import r2_score
