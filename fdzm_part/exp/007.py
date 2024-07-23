@@ -55,7 +55,7 @@ config = {
     "eval_val": True,
     "num_workers": 8*3,
     "apex": False,
-    "debug": True,
+    "debug": False,
     "scheduler_type": "constant_schedule_with_warmup",
     "n_warmup_steps": 10,
     "cosine_n_cycles": 0.5,
