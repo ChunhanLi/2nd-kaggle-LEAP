@@ -1,3 +1,4 @@
+[toc]
 # LEAP - Atmospheric Physics using AI (ClimSim) - 2nd Place Solution
 
 It's 2nd place solution to Kaggle competition: https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim
@@ -10,6 +11,19 @@ This repo contains the code we used to train the models. But it could be really 
 
 We have 5 people in our team and each one has his own environment and training/inference details.
 
+
+1. [Common part](#Common-part)
+2. [ADAM's part](#ADAM's-part)
+    1.[Train from scratch](#train-from-scratchadam)
+    2.[Only inference](#only-inferenceadam)
+3. [FDZM's part](#fdzm's-part)
+    1.[ForcewithMe's part](#forcewithmes-part)
+    2.[Joseph's part](#josephs-partcoming-soon)
+    3.[Max2020](#max2020s-part)
+        1.[Train from scratch](#train-from-scratchmax2020)
+        2.[Only inference](#only-inferencemax2020)
+    4.[zuiye](#zuiyes-part)
+4. [Ensemble](#ensemble-part)
 ## Common part
 
 - download [kaggle-data](https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim/data) into `raw_data/kaggle-data` folder. At least, we need those 3 files.
@@ -33,7 +47,7 @@ We have 5 people in our team and each one has his own environment and training/i
 - CUDA 12.2
 - nvidia drivers v535.129.03
 
-### Train from scratch
+### Train from scratch(ADAM)
 - **STEP1: preprocessing**
 
 From [link](https://www.kaggle.com/datasets/hookman/leap-2nd-prize-models), Download file `v3_index.pt` into `adam_part/data/middle_result` folder
@@ -63,7 +77,7 @@ cd adam_part/src
 sh cp_train.sh
 ```
 
-### Only inference
+### Only inference(ADAM)
 
 In this part, it will only do the inference using model file we uploaded. 
 - **STEP1: preprocessing**
@@ -90,21 +104,22 @@ cd adam_part/src
 sh cp_infer.sh
 ```
 
-## xxxx's part
+## fdzm's part
 
+### ForcewithMe's part 
 
-## Joseph's part(coming soon)
+### Joseph's part(coming soon)
 
-## Max2020's part
+### Max2020's part
 My environment requirements need to be consistent with those of Joseph and Forcewithme.
 
-### Train from scratch
+#### Train from scratch(max2020)
 
 ```shell
 cd fdzm_part/exp
 sh train_max2020.sh 
 ```
-### Only inference
+#### Only inference(max2020)
 ```shell
 cd fdzm_part/infer
 sh infer_max2020.sh
@@ -120,10 +135,8 @@ Regarding the learning rate schedule, I used a cosine decay learning rate, with 
 
 For the loss function, I utilized smooth L1 loss with a beta of 0.5.
 
-## Group Finetune
-In deep learning, a continuously discussed topic within multi-objective learning tasks is the interaction between different learning objectives, specifically whether they promote or inhibit each other. In our experiments on the leap dataset, we found that in the early stages of training, seven different target groups promoted each other. However, towards the end of the training, these learning objectives began to interfere with each other, potentially due to complex semantic constraints. 
+### zuiye's part
 
-Inspired by the [top solution from the 2021 VPP competition](https://www.kaggle.com/competitions/ventilator-pressure-prediction/discussion/285320), we divided 368 features into seven groups, six of which are series of measurements of different metrics along the atmospheric column, and one group consists of eight unique single targets. After the training process with 364 full outputs was completed, we fine-tuned these groups again. This allowed each model with different architectures to achieve an improvement ranging from 0.0005 to 0.0015. Due to time and resource constraints, we only fine-tuned each group for one epoch.
 ## Ensemble part
 
 Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-series-s3e3/discussion/379690) to search blend weights.
@@ -136,3 +149,9 @@ python hill_climb_blend.py
 ```
 
 This will generate `submission/blend/final_blend_v10.parquet` for final submission.
+
+
+## Group Finetune
+In deep learning, a continuously discussed topic within multi-objective learning tasks is the interaction between different learning objectives, specifically whether they promote or inhibit each other. In our experiments on the leap dataset, we found that in the early stages of training, seven different target groups promoted each other. However, towards the end of the training, these learning objectives began to interfere with each other, potentially due to complex semantic constraints. 
+
+Inspired by the [top solution from the 2021 VPP competition](https://www.kaggle.com/competitions/ventilator-pressure-prediction/discussion/285320), we divided 368 features into seven groups, six of which are series of measurements of different metrics along the atmospheric column, and one group consists of eight unique single targets. After the training process with 364 full outputs was completed, we fine-tuned these groups again. This allowed each model with different architectures to achieve an improvement ranging from 0.0005 to 0.0015. Due to time and resource constraints, we only fine-tuned each group for one epoch.
