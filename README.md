@@ -2,7 +2,7 @@
 
 It's 2nd place solution to Kaggle competition: https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim
 
-This repo contains the code we used to train the models. But it could be really time-consuming. AS as result, we also provide trained model file to infer directly.
+This repo contains the code we used to train the models. But it could be really time-consuming. As a result, we also provide trained model file to infer directly.
 
 
 
