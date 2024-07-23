@@ -419,10 +419,10 @@ def train_loop(train_loader, val_loader, model, optimizer,
     return best_pred_epoch, best_score_epoch,best_zero_list
 
     
-with open("../data/mean_v0.json",'r') as f:
+with open("../data/mean.json",'r') as f:
     mean_dict = json.load(f)
 
-with open("../data/std_v0.json",'r') as f:
+with open("../data/std.json",'r') as f:
     std_dict = json.load(f)
 
 target_col_series_name = ["ptend_t","ptend_q0001","ptend_q0002","ptend_q0003","ptend_u","ptend_v"]
@@ -632,7 +632,8 @@ def pred_func(inputs_array_path, model_dir, model_new, new_zero_pred_list, bad_g
             
     sub_sample = pd.read_csv("../../raw_data/kaggle-data/sample_submission.csv")
     sub_sample.iloc[:,1:] = final_np
-    sub_sample.to_parquet(f"../outputs/{exp_id}/{exp_id}.parquet")
+    sub_sample.to_parquet(f"../infer_outputs/Jo_ex912sep2_cv78935.parquet")
+    sub_sample.to_parquet(f"../../submission/subs/Jo_ex912sep2_cv78935.parquet")
 
 
 if __name__ == "__main__":

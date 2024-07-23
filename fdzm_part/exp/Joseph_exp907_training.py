@@ -529,7 +529,8 @@ def pred_func(inputs_array_path, model_path, model_new, new_zero_pred_list):
             
     sub_sample = pd.read_csv("../../raw_data/kaggle-data/sample_submission.csv")
     sub_sample.iloc[:,1:] = final_np
-    sub_sample.to_parquet(f"../outputs/{exp_id}/{exp_id}.parquet")
+    sub_sample.to_parquet(f"../infer_outputs/Jo_ex907_cv7855.parquet")
+    sub_sample.to_parquet(f"../../submission/subs/Jo_ex907_cv7855.parquet")
 
 
 if __name__ == "__main__":

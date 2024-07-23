@@ -19,8 +19,8 @@ sys.path.insert(0, "./")
 import os
 import gc
 
-from joseph_model_utils import *
-from joseph_base_utils import *
+from utils.model_utils import *
+from utils.base_utils import *
 
 exp_id = "ex912sep"
 config = {
@@ -222,10 +222,10 @@ class LeapDataset(Dataset):
         return len(self.inputs)
 
     
-with open("../data/mean_v0.json",'r') as f:
+with open("../data/mean.json",'r') as f:
     mean_dict = json.load(f)
 
-with open("../data/std_v0.json",'r') as f:
+with open("../data/std.json",'r') as f:
     std_dict = json.load(f)
 
 target_col_series_name = ["ptend_t","ptend_q0001","ptend_q0002","ptend_q0003","ptend_u","ptend_v"]
@@ -367,9 +367,10 @@ def pred_func(inputs_array_path, model_dir, model_new, new_zero_pred_list):
             old_idx = target_cols.index(col)
             final_np[:,idx] = (oof_pred[:,old_idx] * std_dict[col] + mean_dict[col]) / sub_sample_old[col].values[0]
             
-    sub_sample = pd.read_csv("../../raw_data/kaggle-data/sample_submission_new.csv")
+    sub_sample = pd.read_csv("../../raw_data/kaggle-data/sample_submission.csv")
     sub_sample.iloc[:,1:] = final_np
-    sub_sample.to_parquet(f"../infer_outputs/{exp_id}/{exp_id}.parquet")
+    sub_sample.to_parquet(f"../infer_outputs/Jo_ex912sep2_cv78935.parquet")
+    sub_sample.to_parquet(f"../../submission/subs/Jo_ex912sep2_cv78935.parquet")
 
 
 if __name__ == "__main__":

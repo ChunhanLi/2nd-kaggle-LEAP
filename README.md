@@ -104,11 +104,39 @@ sh cp_train.sh
 ## fdzm's part
 
 ### Preprocessing part
-- 注意区分下train from scratch和only inference的preprocess部分。
+
+#### Train from scratch
+- Firstly, we run generate_par_data.py and cal_mean_std.py to get kaggle data used for calculating mean.json and std.json for normalization.
+- Secondly, we process the Climsim data(.nc) to get the input data for training. All processed data is in "fdzm_part/data/months"
+
+```shell
+cd fdzm_part/data
+sh train_data_generator.sh 
+```
+
+#### Only inference
+- We run generate_par_data.py and cal_mean_std.py to get kaggle data used for calculating mean.json and std.json for normalization, and the processed test data.
+
+```shell
+cd fdzm_part/data
+sh test_data_generator.sh 
+```
 
 ### ForcewithMe's part 
 
-### Joseph's part(coming soon)
+### Joseph's part
+
+#### Train from scratch
+
+```shell
+cd fdzm_part/exp
+sh train_joseph.sh 
+```
+#### Only inference
+```shell
+cd fdzm_part/infer
+sh infer_joseph.sh
+```
 
 ### Max2020's part
 My environment requirements need to be consistent with those of Joseph and Forcewithme.

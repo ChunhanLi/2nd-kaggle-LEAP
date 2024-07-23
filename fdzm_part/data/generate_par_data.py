@@ -54,8 +54,7 @@ if __name__ == "__main__":
         train_batch.to_parquet(train_save_path + f"{k}.parquet")
         k += 1
 
-    # test 文件生成  
-    k = 0
+    # test 文件生成
     train_batch = pd.read_csv(raw_data_path + "test.csv")
 
     train_col = list(train_batch.columns)[1:557]
@@ -66,5 +65,5 @@ if __name__ == "__main__":
     
     for col32 in tqdm(float32_cols):
         train_batch[col32] = train_batch[col32].astype(np.float32)
-    train_batch.to_parquet(test_save_path + f"{k}.parquet")
+    train_batch.to_parquet(test_save_path + "0.parquet")
     
