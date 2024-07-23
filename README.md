@@ -155,7 +155,7 @@ python hill_climb_blend.py
 
 This will generate `submission/blend/final_blend_v10.parquet` for final submission.
 
-**Model weights are following:**
+**Weights of best Model are following:**
 
 |exp_id|weight|cv|public leadborad|private leadboard|
 |:-:|:-:|:-:|:-:|:-:|
