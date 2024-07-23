@@ -2,7 +2,7 @@
 
 It's 2nd place solution to Kaggle competition: https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim
 
-This repo contains the code we used to train the models. But it could be really time-consuming. AS as result, we also provide trained model file to infer directly.
+This repo contains the code we used to train the models. But it could be really time-consuming. As a result, we also provide trained model file to infer directly.
 
 
 
@@ -168,7 +168,23 @@ In deep learning, a continuously discussed topic within multi-objective learning
 
 Inspired by the [top solution from the 2021 VPP competition](https://www.kaggle.com/competitions/ventilator-pressure-prediction/discussion/285320), we divided 368 features into seven groups, six of which are series of measurements of different metrics along the atmospheric column, and one group consists of eight unique single targets. After the training process with 364 full outputs was completed, we fine-tuned these groups again. This allowed each model with different architectures to achieve an improvement ranging from 0.0005 to 0.0015. Due to time and resource constraints, we only fine-tuned each group for one epoch.
 
-### zuiye's part
+### ZuiYe's part
+According to the final hill climb result, my models are not taken into use in the final ensemble submission, so I just simply describe my method without codes.
+
+My models are mainly based one two architectures. The first one consists of 2 LSTM layers followed by a MultiheadAttention layer. The other one consists of 3 parallel Convolutional layers with 3 different kernal sizes and next 2 LSTM layers followed by a MultiheadAttention layer just like the first architecture. My best single model gets LB 0.78696 / PB 0.78205 and ensemle of my own models (with hill climb) gets LB 0.79050/ PB 0.78614.
+
+#### Auxiliary Loss
+I design an auxiliary loss we call Diff Loss to help our models learn better. Almost all models of our teams benefit from this. For every group of targets with 60 vertical levels, we caculate the difference of the real values of level N with level N+1 and the difference of predicted values of level N with level N+1. The error of prediction difference to real difference is caculated with smoothl1 loss to describe the changes between two adjacent levels and then added to the main loss. The code is as follows.
+
+```python
+with torch.no_grad():
+    out_puts = model(inputs)
+    loss = criterion(out_puts, labels)
+    for i in range(6):
+        output_diff = out_puts[:, 8+60*i+1:8+60*(i+1)] - out_puts[:, 8+60*i:8+60*(i+1)-1]
+        label_diff = labels[:, 8+60*i+1:8+60*(i+1)] - labels[:, 8+60*i:8+60*(i+1)-1]
+        loss += criterion(output_diff, label_diff) / 6
+```
 
 ## Ensemble part
 
