@@ -16,7 +16,7 @@ We have 5 people in our team and each one has his own environment and training/i
 3. [FDZM's part](#fdzm's-part)
     1.[Preprocessing](#preprocessing-part)
     2.[ForcewithMe's part](#forcewithmes-part)
-    3.[Joseph's part](#josephs-partcoming-soon)
+    3.[Joseph's part](#josephs-part)
     4.[Max2020](#max2020s-part)
     5.[Zuiye](#zuiyes-part)
 4. [Ensemble](#ensemble-part)
@@ -103,6 +103,7 @@ sh cp_train.sh
 
 ## fdzm's part
 
+
 ### Preprocessing part
 
 #### Train from scratch
@@ -115,7 +116,7 @@ sh train_data_generator.sh
 ```
 
 #### Only inference
-- We run generate_par_data.py and cal_mean_std.py to get kaggle data used for calculating mean.json and std.json for normalization, and the processed test data.
+- We process the kaggle test data to get the input for models(mean.json & std.json already exist).
 
 ```shell
 cd fdzm_part/data
