@@ -125,6 +125,34 @@ sh test_data_generator.sh
 
 ### ForcewithMe's part 
 
+#### Hardware
+
+- RAM: At least 360 Gi [**if only infer, 120Gi is enough**]
+- GPU: 4 x RTX4090 [**if only infer, 1 RTX4090 is enough**]
+
+#### Get started
+
+1. `install -r requirements.txt`, if you meet problems when installing `mamba-ssm`, please check the guidance about install in https://github.com/state-spaces/mamba;
+2. place all the downloaded weights in `fdzm_part/weights` folder. 
+For example, for the `forcewithme_gf_reslstm_cv0.790_lb0.785` model, place `forcewithme_gf_reslstm_cv0.790_lb0.785.pt` in `fdzm_part/weights/forcewithme_gf_reslstm_cv0.790_lb0.785/forcewithme_gf_reslstm_cv0.790_lb0.785.pt`;
+3. All the models have a global id for training scripts, inference scripts, checkpoints, prediction files. You can see more details about the model in the solution document.
+
+#### Training(Optinal)
+1. We have provided the checkpoints trained during the LEAP competition. So if you don't want to reproduce the training process, you can skip this part and focuse on inference part. If you want to re-train the models, please attach to the following steps:
+2. `cd exp`
+3. `bash train_force`. This scripts will train all the 6 models of ForcewithMe. The training contains 2 stages:
+
+(1) Optimize on all of the 368 targets
+(2) Resume on the weights produced on stage (1), and fine-tuning on 7 groups(60-60-60-60-60-8), respectively.
+
+4. The training outputs are in `fdzm_part/outputs`, including checkpoints, oof, prediction files and logs. 
+
+#### Inference
+1. `cd infer`
+2. `bash infer_force.sh`. This scripts will infer all the 6 models trained by ForcewithMe.
+3. The inference outputs(parquet prediction files) are in `fdzm_part/outputs`.
+4. Please move those prediction files(`.parquet` file) into the direction required by the ensemble part manually.
+
 ### Joseph's part
 
 #### Train from scratch
