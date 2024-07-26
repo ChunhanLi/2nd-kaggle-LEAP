@@ -12,8 +12,8 @@ We have 5 people in our team and each one has his own environment and training/i
 
 
 1. [Common part](#Common-part)
-2. [ADAM's part](#ADAM's-part)
-3. [FDZM's part](#fdzm's-part)
+2. [ADAM's part](#adams-part)
+3. [FDZM's part](#fdzms-part)
     1.[Preprocessing](#preprocessing-part)
     2.[ForcewithMe's part](#forcewithmes-part)
     3.[Joseph's part](#josephs-part)
