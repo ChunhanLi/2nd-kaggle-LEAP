@@ -64,7 +64,7 @@ sh run_only_infer.sh
 ```
 
 
-### Train from scratch
+### Train from scratch(Optinal)
 - **STEP1: preprocessing**
 
 From `adam_attachment` folder of [link](https://drive.google.com/drive/u/0/folders/1-1gavnxXqj2x6giAjPkPQcrTfpVE3fpC), Download file `v3_index.pt` into `adam_part/data/middle_result` folder
@@ -142,7 +142,7 @@ For example, for the `forcewithme_gf_reslstm_cv0.790_lb0.785` model, place `forc
 
 ### Joseph's part
 
-#### Train from scratch
+#### Train from scratch(Optinal)
 
 ```shell
 cd fdzm_part/exp
@@ -157,7 +157,7 @@ sh infer_joseph.sh
 ### Max2020's part
 My environment requirements need to be consistent with those of Joseph and Forcewithme.
 
-#### Train from scratch
+#### Train from scratch(Optinal)
 
 ```shell
 cd fdzm_part/exp
