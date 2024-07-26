@@ -27,6 +27,7 @@ We have 5 people in our team and each one has his own environment and training/i
     - sample_submission.csv
     - train.csv[**if only infer, this one can be skipped.**]
 - [**if you only plan to do the inference, this step can be skipped.**] download https://huggingface.co/datasets/LEAP/ClimSim_low-res data into `raw_data/ClimSim_low-res` folder. The expected structure should be `raw_data/ClimSim_low-res/train/0009-01/*.nc`
+- attachment: [google-drive link](https://drive.google.com/drive/u/0/folders/1-1gavnxXqj2x6giAjPkPQcrTfpVE3fpC)
 
 ## ADAM's part
 
@@ -48,7 +49,7 @@ We have 5 people in our team and each one has his own environment and training/i
 In this part, it will only do the inference using model file we uploaded. 
 - **STEP1: preprocessing**
 
-1. Download model file `195.pt`, `197.pt`, `200.pt` from [link](https://www.kaggle.com/datasets/hookman/leap-2nd-prize-models) into `adam_part/src/infer/saved_model` folder
+1. Download model file `195.pt`, `197.pt`, `200.pt` from `adam_attachment` folder of [link](https://drive.google.com/drive/u/0/folders/1-1gavnxXqj2x6giAjPkPQcrTfpVE3fpC) into `adam_part/src/infer/saved_model` folder
 2. 
 ```
 cd adam_part/src/preprocessing
@@ -66,7 +67,7 @@ sh run_only_infer.sh
 ### Train from scratch
 - **STEP1: preprocessing**
 
-From [link](https://www.kaggle.com/datasets/hookman/leap-2nd-prize-models), Download file `v3_index.pt` into `adam_part/data/middle_result` folder
+From `adam_attachment` folder of [link](https://drive.google.com/drive/u/0/folders/1-1gavnxXqj2x6giAjPkPQcrTfpVE3fpC), Download file `v3_index.pt` into `adam_part/data/middle_result` folder
 - I used sampling in creating datasets. `v3_index.pt` is the sampling index which will be used when creating dataset.
 ```
 cd adam_part/src
@@ -102,6 +103,7 @@ sh train_data_generator.sh
 
 #### Only inference
 - We process the kaggle test data to get the input for models(mean.json & std.json already exist).
+- Download all folders from `fdzm_models` folder of [link](https://drive.google.com/drive/u/0/folders/1-1gavnxXqj2x6giAjPkPQcrTfpVE3fpC) into `fdzm_part/weights` folder. So expected structure should be `fdzm_part/weights/exp907/*.pt` or `fdzm_part/weights/021_fork14_moredim_gf/*.pt`
 
 ```shell
 cd fdzm_part/data
@@ -124,7 +126,7 @@ For example, for the `forcewithme_gf_reslstm_cv0.790_lb0.785` model, place `forc
 
 #### Training(Optinal)
 1. We have provided the checkpoints trained during the LEAP competition. So if you don't want to reproduce the training process, you can skip this part and focuse on inference part. If you want to re-train the models, please attach to the following steps:
-2. `cd exp`
+2. `cd fdzm_part/exp`
 3. `bash train_force`. This scripts will train all the 6 models of ForcewithMe. The training contains 2 stages:
 
 (1) Optimize on all of the 368 targets
@@ -206,6 +208,19 @@ Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-seri
 
 `submission/blend/weight_df_dict_all_group_all_v10.pt` saves ensemble weight of each model.
 
+**Code**
+
+```
+cd submission/blend
+python hill_climb_blend.py
+```
+
+This will generate `submission/blend/final_blend_v10.parquet` for final submission.
+
+- cv:0.7955 
+- public leaderborad: 0.79211
+- private leaderboard: 0.78856
+
 **Weights of best model are following:**
 
 |exp_id|weight|cv|public leaderborad|private leaderboard|
@@ -227,17 +242,4 @@ Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-seri
 |Jo_exp907|-0.083779|0.7855|0.78289|0.77873|
 |forcewithme_exp18|-0.089079|0.7890|0.7863|0.78272
 
-
-**Code**
-
-```
-cd submission/blend
-python hill_climb_blend.py
-```
-
-This will generate `submission/blend/final_blend_v10.parquet` for final submission.
-
-- cv:0.7955 
-- public leaderborad: 0.79211
-- private leaderboard: 0.78856
 
