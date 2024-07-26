@@ -19,6 +19,8 @@ import os
 import gc
 from sklearn.metrics import r2_score
 import functools
+import warnings
+warnings.filterwarnings("ignore")
 
 from utils.model_utils import *
 from utils.base_utils import *
