@@ -36,6 +36,7 @@ We have 5 people in our team and each one has his own environment and training/i
 
 - RAM: At least 360 Gi [**if only infer, 120Gi is enough**]
 - GPU: 3 x RTX4090 [**if only infer, 1 RTX4090 is enough**]
+- Disk: At least 1000Gi[**if only infer, 300Gi is enough**]
 
 **SOFTWARE**
 
