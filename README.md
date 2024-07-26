@@ -92,7 +92,7 @@ sh run.sh
 
 ### Preprocessing part
 
-#### Train from scratch
+#### Train from scratch(Optinal)
 - Firstly, we run generate_par_data.py and cal_mean_std.py to get kaggle data used for calculating mean.json and std.json for normalization.
 - Secondly, we process the Climsim data(.nc) to get the input data for training. All processed data is in "fdzm_part/data/months"
 
