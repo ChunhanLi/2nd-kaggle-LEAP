@@ -57,7 +57,7 @@ python process_test.py
 ```
 - **STEP2: inference**
 
-The outputs are in adam_part/src/infer/subs folder. 
+The outputs are in `adam_part/src/infer/subs` folder. 
 ```
 cd adam_part/src/infer
 sh run_only_infer.sh

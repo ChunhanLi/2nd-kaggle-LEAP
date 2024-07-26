@@ -1,0 +1,8 @@
+torch==1.12.1+cu113
+transformers==4.42.1
+python_box==7.2.0
+PyxLSTM==1.0.1
+tqdm==4.66.4
+mamba_ssm==2.1.0
+scikit-learn==1.5.0
+pandas==2.2.2

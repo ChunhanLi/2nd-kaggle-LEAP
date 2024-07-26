@@ -30,7 +30,7 @@ np.set_printoptions(precision=5, linewidth=200)
 # 只能在py文件里运行, 不能在Notebook运行
 current_file_path = __file__
 file_name = os.path.basename(current_file_path)
-exp_id = "forcewithme_gf038_2LSTM1mamba-3_state64_cv0.7897_LB0.787"
+exp_id = "forcewithme_gf038_2LSTM1mamba-3_state64_cv0.7897_LBunknown"
 # exp_id = "001"
 os.makedirs(f"../infer_outputs/{exp_id}",exist_ok=True)
 columns_to_keep = ['sample_id']
@@ -521,13 +521,7 @@ def pred_func_4g(inputs_array_path,model_dir,model_new,new_zero_pred_list):
 
     oof_pred_llist=[]
     for gid in range(7):
-        if CFG.gid2skip is not None:
-            if gid == CFG.gid2skip:
-                model_path = CFG.resume
-            else:
-                model_path = f"{model_dir}/{CFG.exp_id}_g{gid}.pt"
-        else:
-            model_path = f"{model_dir}/{CFG.exp_id}_g{gid}.pt"
+        model_path = f"{model_dir}/{CFG.exp_id}_g{gid}.pt"
         print(f'load model from {model_path}')
         model = model_new
         model.load_state_dict(torch.load(model_path), strict=True)
@@ -566,7 +560,8 @@ def pred_func_4g(inputs_array_path,model_dir,model_new,new_zero_pred_list):
     columns_to_convert = [col for col in sub_sample.columns if col not in columns_to_keep]
     sub_sample[columns_to_convert] = sub_sample[columns_to_convert].astype(np.float64)
     sub_sample.iloc[:,1:] = final_np
-    pl.from_pandas(sub_sample).write_parquet(f"../infer_outputs/{exp_id}/exp{exp_id}_new.parquet")
+    pl.from_pandas(sub_sample).write_parquet(f"../infer_outputs/{exp_id}/{exp_id}.parquet")
+    pl.from_pandas(sub_sample).write_parquet(f"../../submission/subs/{exp_id}.parquet")
 
 if __name__ == "__main__":
 

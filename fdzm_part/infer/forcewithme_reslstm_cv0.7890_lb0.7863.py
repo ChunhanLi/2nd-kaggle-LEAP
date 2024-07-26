@@ -27,9 +27,9 @@ from utils.base_utils import *
 # 只能在py文件里运行, 不能在Notebook运行
 current_file_path = __file__
 file_name = os.path.basename(current_file_path)
-exp_id = "forcewithme_reslstm_cv0.789_lb0.783"
+exp_id = "forcewithme_reslstm_cv0.7890_lb0.7863"
 # exp_id = "001"
-os.makedirs(f"../outputs/{exp_id}",exist_ok=True)
+os.makedirs(f"../infer_outputs/{exp_id}",exist_ok=True)
 
 config = {
 
@@ -545,7 +545,8 @@ def pred_func(inputs_array_path,model_path,model_new,new_zero_pred_list):
     columns_to_convert = [col for col in sub_sample.columns if col not in columns_to_keep]
     sub_sample[columns_to_convert] = sub_sample[columns_to_convert].astype(np.float64)
     sub_sample.iloc[:,1:] = final_np
-    pl.from_pandas(sub_sample).write_parquet(f"../outputs/{exp_id}/exp{exp_id}_new.parquet")
+    pl.from_pandas(sub_sample).write_parquet(f"../infer_outputs/{exp_id}/{exp_id}.parquet")
+    pl.from_pandas(sub_sample).write_parquet(f"../../submission/subs/{exp_id}.parquet")
 
 def check_data_size(npy_files, ratio):
     # 预先读取所有文件的形状和总大小
@@ -616,4 +617,6 @@ train_inputs_files = [f"{base_dir}/train_{ym}_inputs.npy" for ym in use_year_mon
 train_outputs_files = [f"{base_dir}/train_{ym}_outputs.npy" for ym in use_year_month]
 
 if __name__ == "__main__":
+    tmp_model = LeapModel().to(CFG.device)
+    #tmp_model = nn.DataParallel(tmp_model.to(CFG.device))
     pred_func(f"../data/test_0_inputs.npy",os.path.join(CFG.save_path, f'{CFG.exp_id}.pt'),tmp_model,non_pred_list)

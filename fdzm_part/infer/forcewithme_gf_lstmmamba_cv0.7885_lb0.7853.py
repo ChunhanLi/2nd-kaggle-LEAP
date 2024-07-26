@@ -565,7 +565,8 @@ def pred_func_4g(inputs_array_path,model_dir,model_new,new_zero_pred_list):
     columns_to_convert = [col for col in sub_sample.columns if col not in columns_to_keep]
     sub_sample[columns_to_convert] = sub_sample[columns_to_convert].astype(np.float64)
     sub_sample.iloc[:,1:] = final_np
-    pl.from_pandas(sub_sample).write_parquet(f"../infer_outputs/{exp_id}/exp{exp_id}_new.parquet")
+    pl.from_pandas(sub_sample).write_parquet(f"../infer_outputs/{exp_id}/{exp_id}.parquet")
+    pl.from_pandas(sub_sample).write_parquet(f"../../submission/subs/{exp_id}.parquet")
 
 def check_data_size(npy_files, ratio):
     # 预先读取所有文件的形状和总大小
