@@ -15,6 +15,7 @@ import time
 from tqdm.auto import tqdm
 import math
 import sys
+import polars as pl
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
@@ -30,7 +31,7 @@ np.set_printoptions(precision=5, linewidth=200)
 # 只能在py文件里运行, 不能在Notebook运行
 current_file_path = __file__
 file_name = os.path.basename(current_file_path)
-exp_id = file_name.split(".")[0]
+exp_id = "forcewithme_gf_LstmMambaMixed_cv0.7886_lb0.7858"
 # exp_id = "001"
 os.makedirs(f"../infer_outputs/{exp_id}",exist_ok=True)
 columns_to_keep = ['sample_id']
@@ -564,5 +565,5 @@ def pred_func_4g(inputs_array_path,model_dir,model_new,new_zero_pred_list):
 if __name__ == "__main__":
 
     tmp_model = LeapModel()
-    tmp_model = nn.DataParallel(tmp_model.to(CFG.device), device_ids=list(range(3)))
+    tmp_model = nn.DataParallel(tmp_model.to(CFG.device))
     pred_func_4g(f"../data/test_0_inputs.npy",CFG.save_path,tmp_model,non_pred_list)

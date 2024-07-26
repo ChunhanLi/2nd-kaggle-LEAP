@@ -1,3 +1,4 @@
+set -e
 python forcewithme_gf_cnnlstm_cv0.789_lb0.787.py
 python forcewithme_gf_lstmmamba_cv0.7885_lb0.7853.py
 python forcewithme_gf_LstmMambaMixed_cv0.7886_lb0.7858.py

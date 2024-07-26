@@ -22,10 +22,10 @@ We have 5 people in our team and each one has his own environment and training/i
 4. [Ensemble](#ensemble-part)
 ## Common part
 
-- download [kaggle-data](https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim/data) into `raw_data/kaggle-data` folder. At least, we need those 3 files.
+- download [kaggle-data](https://www.kaggle.com/competitions/leap-atmospheric-physics-ai-climsim/data) into `raw_data/kaggle-data` folder. 
     - test.csv
     - sample_submission.csv
-    - sample_submission_old.csv
+    - train.csv[**if only infer, this one can be skipped.**]
 - [**if you only plan to do the inference, this step can be skipped.**] download https://huggingface.co/datasets/LEAP/ClimSim_low-res data into `raw_data/ClimSim_low-res` folder. The expected structure should be `raw_data/ClimSim_low-res/train/0009-01/*.nc`
 
 ## ADAM's part
@@ -62,13 +62,6 @@ cd adam_part/src/infer
 sh run_only_infer.sh
 ```
 
-- **STEP3: copy submission for ensemble**
-
-move submission files to `submission/subs` folder for final ensemble
-```
-cd adam_part/src
-sh cp_infer.sh
-```
 
 ### Train from scratch
 - **STEP1: preprocessing**
@@ -90,14 +83,6 @@ In this part, it will train from scratch and also do the inference. The outputs 
 ```
 cd adam_part/src/exp
 sh run.sh
-```
-
-- **STEP3: copy submission for ensemble**
-
-move submission files to `submission/subs` folder for final ensemble
-```
-cd adam_part/src
-sh cp_train.sh
 ```
 
 
@@ -148,7 +133,7 @@ For example, for the `forcewithme_gf_reslstm_cv0.790_lb0.785` model, place `forc
 4. The training outputs are in `fdzm_part/outputs`, including checkpoints, oof, prediction files and logs. 
 
 #### Inference
-1. `cd infer`
+1. `cd fdzm_part/infer`
 2. `bash infer_force.sh`. This scripts will infer all the 6 models trained by ForcewithMe.
 3. The inference outputs(parquet prediction files) are in `fdzm_part/outputs`.
 4. Please move those prediction files(`.parquet` file) into the direction required by the ensemble part manually.
@@ -229,7 +214,7 @@ Finally, We use [hill climb](https://www.kaggle.com/competitions/playground-seri
 |forcewithme_exp37|0.158625|0.7896|0.78618|0.78293|
 |forcewithme_exp38|0.139194|0.7897|0.78719|0.78362|
 |max_exp22|0.120125|0.7908|**0.78793**|**0.78434**|
-|Jo_exp912|0.111971|0.78935|0.78562|0.78139|
+|Jo_exp912|0.111971|0.78935|0.78528|0.78150|
 |max_exp21|0.104738|0.7904|0.78752|0.78425|
 |forcewithme_exp39|0.098977|0.789|0.78699|0.78257|
 |max_exp14|0.093088|0.7905|0.78641|0.78214|

@@ -27,7 +27,7 @@ from utils.base_utils import *
 # 只能在py文件里运行, 不能在Notebook运行
 current_file_path = __file__
 file_name = os.path.basename(current_file_path)
-exp_id = file_name.split(".")[0]
+exp_id = "forcewithme_reslstm_cv0.789_lb0.783"
 # exp_id = "001"
 os.makedirs(f"../outputs/{exp_id}",exist_ok=True)
 
@@ -508,7 +508,7 @@ def pred_func(inputs_array_path,model_path,model_new,new_zero_pred_list):
                                             shuffle=False, pin_memory=True, drop_last=False)
     model = model_new
     model = model.to(CFG.device)
-    model = nn.DataParallel(model, device_ids=[0,1,2,3])
+    model = nn.DataParallel(model)
     model.load_state_dict(torch.load(model_path), strict=True)
     
     

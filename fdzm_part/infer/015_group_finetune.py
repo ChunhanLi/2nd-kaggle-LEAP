@@ -350,10 +350,10 @@ def train_loop(train_loader, val_loader, model, optimizer,
     return best_pred_epoch, best_score_epoch,best_zero_list
 
     
-with open("../data/mean_v0.json",'r') as f:
+with open("../data/mean.json",'r') as f:
     mean_dict = json.load(f)
 
-with open("../data/std_v0.json",'r') as f:
+with open("../data/std.json",'r') as f:
     std_dict = json.load(f)
 
 target_col_series_name = ["ptend_t","ptend_q0001","ptend_q0002","ptend_q0003","ptend_u","ptend_v"]
@@ -582,7 +582,7 @@ def pred_func_4g(inputs_array_path,model_dir,model_new,new_zero_pred_list):
     sub_12_27 = pd.read_parquet("../data/sub_12_27.parquet")
     # 归一化回去
     final_np = np.zeros(oof_pred.shape, dtype=np.float64)
-    sub_sample_old= pd.read_csv("../../raw_data/sample_submission_old.csv", nrows=1)
+    sub_sample_old= pd.read_csv("../../raw_data/kaggle-data/sample_submission_old.csv", nrows=1)
     for idx, col in enumerate(sub_order):
         # 直接0
         if col in new_zero_pred_list:
@@ -594,7 +594,7 @@ def pred_func_4g(inputs_array_path,model_dir,model_new,new_zero_pred_list):
             old_idx = target_cols.index(col)
             final_np[:,idx] = (oof_pred[:,old_idx] * std_dict[col] + mean_dict[col]) / sub_sample_old[col].values[0]
             
-    sub_sample = pd.read_csv("../../raw_data/sample_submission.csv")
+    sub_sample = pd.read_csv("../../raw_data/kaggle-data/sample_submission.csv")
     sub_sample[sub_sample.columns[1:]] = sub_sample[sub_sample.columns[1:]].astype("float64"); sub_sample.iloc[:,1:] = final_np
     sub_sample.to_parquet(f"../infer_outputs/{exp_id}/exp{exp_id}.parquet")
 

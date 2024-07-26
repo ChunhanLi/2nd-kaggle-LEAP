@@ -1,3 +1,4 @@
+set -e
 python 010_group_finetune.py
 python 014_group_finetune.py
 python 015_group_finetune.py
