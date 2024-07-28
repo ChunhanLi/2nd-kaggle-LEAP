@@ -35,12 +35,18 @@ if __name__ == "__main__":
             print(exp_id)
             sub_ = pd.read_parquet(file)
             submit_dict[exp_id] = sub_
-
+    
+    len_models = len(df)
+    len_load = len(submit_dict)
+    print(len_models, len_load)
+    if len_models != len_load:
+        raise ValueError("model number is not correct")
     # 验证
     tmp = 0
     w_sum = 0
     for model,weight in zip(df['model'],df['weight']):
         tmp += submit_dict[model].iloc[:,1:].values * weight
         w_sum +=weight
+    print(w_sum)
     base.iloc[:,1:] = tmp
     base.to_parquet("./final_blend_v10.parquet")
