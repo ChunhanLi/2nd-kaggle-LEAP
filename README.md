@@ -244,3 +244,6 @@ This will generate `submission/blend/final_blend_v10.parquet` for final submissi
 |forcewithme_exp18|-0.089079|0.7890|0.7863|0.78272
 
 
+It's important to note that we've provided the parameter weights files for all models on  [google driver](https://drive.google.com/drive/u/0/folders/1-1gavnxXqj2x6giAjPkPQcrTfpVE3fpC). Using these for ensemble submissions results in slightly higher LB and PB scores, by a margin of 0.0002. The discrepancies stem from two main issues:
+
+Firstly, the jo\_exp907.pt model file was missing, and the model had to be rerun post-competition, which led to some differences from the original. Secondly, during the competition, an incorrect model file was used under the forcewithme\_exp18 (corresponding to the forcewithme\_reslstm\_cv0.789\_lb0.783 folder). This has now been corrected. These two points have caused a very minor difference in our final results. Although we believe this difference does not impact the reproducibility of our overall approach, we mention it here to avoid any confusion.
